@@ -15,6 +15,5 @@ def formulaire():
     else:
         return "Vous avez envoyé: {msg}".format(msg=request.form['textarea'])
 
-
 if __name__ == '__main__':
     app.run(debug=True)
