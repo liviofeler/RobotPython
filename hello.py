@@ -8,5 +8,13 @@ app = Flask(__name__)
 def index():
     return render_template('helloWorld.html')
 
+@app.route('/formulaire/', methods=['GET','POST'])
+def formulaire():
+    if request.method == 'GET':
+        return  render_template ('formulaire.html')
+    else:
+        return "Vous avez envoyé: {msg}".format(msg=request.form['textarea'])
+
+
 if __name__ == '__main__':
     app.run(debug=True)
